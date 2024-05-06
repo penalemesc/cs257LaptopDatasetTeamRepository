@@ -12,7 +12,7 @@ def laptopsOverOneThousand():
 
     cur = conn.cursor()
 
-    sql = "SELECT * FROM laptops WHERE priceInUSDollars > 1000"
+    sql = "SELECT companyName, typeName FROM laptops WHERE priceInUSDollars > 1000"
 
     cur.execute(sql)
 
