@@ -1,5 +1,4 @@
 drop table if exists laptops cascade;
-drop table if exists laptopPrice cascade;
 
 Create table laptops(
 	laptopID int primary key,
@@ -12,13 +11,8 @@ Create table laptops(
 	memory varchar(50) not null,
 	gpu varchar(100) not null,
 	os varchar(30) not null,
-	laptopWeight varchar(30) not null
-);
-
-Create table laptopPrice(
-	laptopID int primary key REFERENCES laptops (laptopID),
+	laptopWeight varchar(30) not null,
 	priceInUSDollars real not null
 );
 
-\copy laptops from 'laptopDataWithNoMoney.csv' DELIMITER ',' CSV
-\copy laptopPrice from 'laptopPrices.csv' DELIMITER ',' CSV
+\copy laptops from 'laptop_data_WithUSMoney.csv' DELIMITER ',' CSV
