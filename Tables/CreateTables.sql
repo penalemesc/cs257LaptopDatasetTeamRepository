@@ -15,4 +15,4 @@ Create table laptops(
 	priceInUSDollars real not null
 );
 
-\copy laptops from 'laptop_data_WithUSMoney.csv' DELIMITER ',' CSV
+\copy laptops from 'laptop_data_WithUSPrices.csv' DELIMITER ',' CSV
