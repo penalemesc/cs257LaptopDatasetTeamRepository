@@ -1,5 +1,5 @@
 drop table if exists laptops cascade;
-drop table if exists laptopPrices cascade;
+drop table if exists laptopPrice cascade;
 
 Create table laptops(
 	laptopID int primary key,
@@ -21,4 +21,4 @@ Create table laptopPrice(
 );
 
 \copy laptops from 'laptopDataWithNoMoney.csv' DELIMITER ',' CSV
-\copy laptopPrices from 'laptopPrices.csv' DELIMITER ',' CSV
+\copy laptopPrice from 'laptopPrices.csv' DELIMITER ',' CSV
