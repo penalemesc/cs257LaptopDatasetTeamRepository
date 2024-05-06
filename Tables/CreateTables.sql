@@ -2,8 +2,8 @@ drop table if exists laptops cascade;
 
 Create table laptops(
 	laptopID int primary key,
-	companyName varchar(30) not null,
-	typeName varchar(30) not null,
+	companyName text not null,
+	typeName text not null,
 	inches real not null,
 	screenResolution varchar(75) not null,
 	cpu varchar(50) not null,
