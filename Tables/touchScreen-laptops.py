@@ -28,4 +28,4 @@ def laptopsWithTouchScreen():
 
     return laptopText + str(row)
 
-laptopsWithTouchScreen()
+print(laptopsWithTouchScreen())
