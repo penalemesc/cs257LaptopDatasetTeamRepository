@@ -26,6 +26,6 @@ def laptopsWithTouchScreen():
     
     laptopText = "Here are all the laptops with a TouchScreen: "
 
-    return laptopText + row
+    return laptopText + str(row)
 
 laptopsWithTouchScreen()
