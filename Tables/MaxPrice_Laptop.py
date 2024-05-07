@@ -31,6 +31,4 @@ def maxPrice():
     print("The most expensive laptop is a " + str(comp_row) + " " +  str(type_row) + " laptop.")
     print("It costs $" + str(price_row) + "!")
 
-    return row
-
-print(maxPrice())
+maxPrice()
