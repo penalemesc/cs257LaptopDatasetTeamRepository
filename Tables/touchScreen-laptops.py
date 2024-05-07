@@ -24,6 +24,8 @@ def laptopsWithTouchScreen():
     cur.execute(searchTouchScreen)
     row = cur.fetchall()
     
-    return "Here are all the laptops with a TouchScreen: " + row
+    laptopText = "Here are all the laptops with a TouchScreen: "
+
+    return laptopText + row
 
 laptopsWithTouchScreen()
