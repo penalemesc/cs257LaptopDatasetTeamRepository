@@ -12,8 +12,8 @@ DROP TABLE IF EXISTS laptops cascade;
     Storage int not null,
     GPU varchar(15) not null,
     GPU_Type text not null,
-    Screen_Size real not null,
     Touchscreen text not null,
+    Screen_Size real not null,
     OS text not null
     );
 
