@@ -17,4 +17,4 @@ DROP TABLE IF EXISTS laptops cascade;
     OS text not null
     );
 
-\copy laptops from 'laptopData.csv' DELIMITER ',' CSV
+\copy laptops from 'newLaptopData.csv' DELIMITER ',' CSV
