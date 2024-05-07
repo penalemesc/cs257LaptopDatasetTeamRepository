@@ -19,7 +19,7 @@ def maxPrice():
 
     cur = conn.cursor()
 
-    max_finder = "SELECT companyName, typeName FROM laptops WHERE priceInUSDollars = (SELECT MAX(priceInUSDollars) FROM laptops);"
+    max_finder = "SELECT companyName, typeName, priceInUSDollars FROM laptops WHERE priceInUSDollars = (SELECT MAX(priceInUSDollars) FROM laptops);"
 
     cur.execute(max_finder)
 
