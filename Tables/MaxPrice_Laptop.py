@@ -23,8 +23,12 @@ def maxPrice():
 
     cur.execute(max_finder)
 
-    row = cur.fetchall()[0]
+    comp_row = str(cur.fetchall()[0][0])
+    type_row = str(cur.fetchall()[0][1])
+    price_row = str(cur.fetchall()[0][2])
 
-    return row
+    print("The most expensive laptop is a " + comp_row + type_row + " laptop. It costs ",
+          price_row)
+
 
 print(maxPrice())
