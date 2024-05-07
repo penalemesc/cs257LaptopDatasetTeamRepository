@@ -19,7 +19,7 @@ def laptopsWithTouchScreen():
 
     cur = conn.cursor()
 
-    searchTouchScreen = "SELECT Laptop_Name, Price, Touchscreen FROM laptops WHERE Touchscreen = TRUE FROM laptops);"
+    searchTouchScreen = "SELECT Laptop_Name, Price, Touchscreen FROM laptops WHERE Touchscreen = 'TRUE' "
 
     cur.execute(searchTouchScreen)
     row = cur.fetchall()
