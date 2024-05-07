@@ -23,7 +23,7 @@ def maxPrice():
 
     cur.execute(max_finder)
 
-    row = cur.fetchall()
+    row = cur.fetchall()[0]
 
     return row
 
