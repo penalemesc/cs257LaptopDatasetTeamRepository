@@ -29,11 +29,11 @@ laptopTable = """DROP TABLE IF EXISTS laptops cascade;
             Touchscreen text not null,
             Price real not null
             );
-            
-            \copy laptops from 'laptopData.csv' DELIMITER ',' CSV
             """
 
+copyLaptopData = "copy laptops from 'laptopData.csv' DELIMITER ',' CSV"
 
 cur.execute(laptopTable)
+cur.execute(copyLaptopData)
 
 conn.commit()
