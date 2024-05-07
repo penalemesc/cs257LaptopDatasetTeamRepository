@@ -1,8 +1,8 @@
-# MaxPrice_Laptop.py
+# touchScreen-laptops.py
 # Authors: THe Blind Ones
 
 # This following program was designed in order to return
-# the laptop with the highest price.
+# the laptops that have a touch screen.
 
 import psycopg2
 
