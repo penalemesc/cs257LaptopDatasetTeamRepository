@@ -15,7 +15,7 @@ def laptopsOverThreeThousand():
 
     cur.execute(sql)
 
-    row = cur.fetchall()
+    row = cur.fetchall()[0]
 
     laptopName = row[2]
 
