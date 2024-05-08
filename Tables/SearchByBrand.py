@@ -29,7 +29,7 @@ def maxPrice():
     price_row = row[2]
 
     print("These are the available laptops by" + userinput + ".")
-    print(str(row))
+    print(str(type_row))
 
 
 maxPrice()
