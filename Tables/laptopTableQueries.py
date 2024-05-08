@@ -17,6 +17,8 @@ def laptopsOverThreeThousand():
 
     row = cur.fetchall()
 
-    return row
+    laptopName = row[2]
+
+    return laptopName
 
 print(laptopsOverThreeThousand())
