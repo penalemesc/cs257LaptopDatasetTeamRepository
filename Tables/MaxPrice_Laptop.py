@@ -19,16 +19,15 @@ def maxPrice():
 
     cur = conn.cursor()
 
-    max_finder = "SELECT companyName, typeName, priceInUSDollars FROM laptops WHERE priceInUSDollars = (SELECT MAX(priceInUSDollars) FROM laptops);"
+    max_finder = "SELECT Brand, Laptop_Name, Price FROM laptops WHERE Price = (SELECT MAX(Price) FROM laptops);"
 
     cur.execute(max_finder)
     row = cur.fetchall()[0]
 
-    comp_row = row[0]
     type_row = row[1]
     price_row = row[2]
 
-    print("The most expensive laptop is a " + str(comp_row) + " " +  str(type_row) + " laptop.")
+    print("The most expensive laptop is the " +  str(type_row))
     print("It costs $" + str(price_row) + "!")
 
 maxPrice()
