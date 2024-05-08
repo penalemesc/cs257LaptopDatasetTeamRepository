@@ -1,14 +1,11 @@
-# MaxPrice_Laptop.py
+# LaptopsByBrand.py
 # Authors: THe Blind Ones
 
-# This following program was designed in order to return
-# all laptops by a specific brand
+# This program is designed to return all the laptops of a specific brand given by the user.
 
 import psycopg2
 
-
-def maxPrice():
-
+def laptopsByBrand():
     # Establishing Environment
     conn = psycopg2.connect(
         host="localhost",
@@ -16,20 +13,25 @@ def maxPrice():
         database="mosesm2",
         user="mosesm2",
         password="field599farm")
-
+    
     cur = conn.cursor()
 
-    userinput = str(input())
-    # max_finder = "SELECT Brand, Laptop_Name, Price FROM laptops WHERE Price = (SELECT MAX(Price) FROM laptops);"
-    # max_finder = "SELECT * FROM laptops WHERE brand = %s;", (userinput)
-    cur.execute("SELECT laptop_name, price FROM laptops WHERE brand = %s;", (userinput,))
-    row = cur.fetchall()[0]
+    brand = input("Please enter the laptop brand you're interested in: ").lower()
 
-    type_row = row[1]
-    price_row = row[2]
+    query = "SELECT laptop_name, price FROM laptops WHERE brand = %s;"
+    cur.execute(query, (brand,))
 
-    print("These are the available laptops by" + userinput + ".")
-    print(str(type_row))
+    rows = cur.fetchall()
 
+    # Check if any laptops were found
+    if rows:
+        print(f"Laptops found for brand {brand}:")
+        for row in rows:
+            print(f"{row[0]} - ${row[1]}")
+    else:
+        print(f"No laptops found for brand {brand}.")
 
-maxPrice()
+    cur.close()
+    conn.close()
+
+laptopsByBrand()
