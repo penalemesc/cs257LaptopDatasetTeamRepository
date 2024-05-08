@@ -19,12 +19,10 @@ def maxPrice():
 
     cur = conn.cursor()
 
-    userinput = input()
+    userinput = str(input())
     # max_finder = "SELECT Brand, Laptop_Name, Price FROM laptops WHERE Price = (SELECT MAX(Price) FROM laptops);"
     # max_finder = "SELECT * FROM laptops WHERE brand = %s;", (userinput)
-    max_finder = "SELECT laptop_name, price FROM laptops WHERE brand = %s;", (userinput)
-
-    cur.execute(max_finder)
+    cur.execute("SELECT laptop_name, price FROM laptops WHERE brand = %s;", (userinput))
     row = cur.fetchall()[0]
 
     type_row = row[1]
