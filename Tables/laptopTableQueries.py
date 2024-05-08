@@ -1,8 +1,7 @@
 import psycopg2
 
 # This function gets the laptops that cost over 1000.
-def laptopsOverOneThousand():
-
+def laptopsOverThreeThousand():
     conn = psycopg2.connect(
         host="localhost",
         port=5432,
@@ -12,7 +11,7 @@ def laptopsOverOneThousand():
 
     cur = conn.cursor()
 
-    sql = "SELECT companyName, typeName FROM laptops WHERE priceInUSDollars > 1000"
+    sql = "SELECT Laptop_Name FROM laptops WHERE Price > 3000"
 
     cur.execute(sql)
 
@@ -20,4 +19,4 @@ def laptopsOverOneThousand():
 
     return row
 
-print(laptopsOverOneThousand())
+print(laptopsOverThreeThousand())
