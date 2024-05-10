@@ -1,6 +1,6 @@
 import psycopg2
 
-# This function gets the laptops that cost over 1000.
+# This function gets the laptops that cost over 3000.
 def laptopsOverThreeThousand():
     conn = psycopg2.connect(
         host="localhost",
