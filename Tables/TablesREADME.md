@@ -1,4 +1,4 @@
-Dataset gathered from: https://www.kaggle.com/datasets/ara001/laptop-prices-based-on-its-specifications/data
+Dataset gathered from: https://www.kaggle.com/datasets/bhavikjikadara/brand-laptops-dataset
 
 The idea behind the file "Table decomposition for group project.pdf" is make the creation of tables easier, by figuring out ways to implement 3NF (or if possible BCNF). 
 
