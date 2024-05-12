@@ -17,3 +17,15 @@
     border-color: dodgerblue;
     box-shadow: 0 0 8px 0 dodgerblue;
 }
+
+.search_button{
+    width: 50px;
+    border: 2px solid black;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+.search_button:focus{
+    border-color: dodgerblue;
+    box-shadow: 0 0 8px 0 dodgerblue;
+}
