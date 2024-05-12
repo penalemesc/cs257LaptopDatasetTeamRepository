@@ -4,6 +4,9 @@
     background-color: #cfe2f3;
     font: Garamond;
     font-size: 70px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
   }
 
 .search_bar{
@@ -28,10 +31,4 @@
 .search_button:focus{
     border-color: dodgerblue;
     box-shadow: 0 0 8px 0 dodgerblue;
-}
-
-.logo {
-    position: absolute; /* or 'fixed' depending on the need */
-    left: 0;
-    top: 0; /* adjust as necessary */
 }
