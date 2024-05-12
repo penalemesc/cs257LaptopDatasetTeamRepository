@@ -6,11 +6,11 @@
     font-size: 70px;
     display: flex;
     align-items: center;
-    gap: 200px;
+    gap: 300px;
   }
 
 .search_bar{
-    width: 300px;
+    width:2503px;
     border: 2px solid black;
     border-radius: 4px;
     padding: 5px;
