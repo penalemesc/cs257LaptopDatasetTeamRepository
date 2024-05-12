@@ -8,7 +8,7 @@ def welcome():
     return render_template("homepage.html")
 
 @app.route('/about-us')
-def welcome():
+def about_us():
     return render_template("about_us.html")
 
 if __name__ == '__main__':
