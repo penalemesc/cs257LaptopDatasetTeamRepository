@@ -5,3 +5,10 @@
     font: Garamond;
     font-size: 70px;
   }
+
+.search_bar{
+    text-align: right;
+    font: Serif;
+    background-color: white;
+    font-size: 20px;
+}
