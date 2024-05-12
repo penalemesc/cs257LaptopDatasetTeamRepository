@@ -19,13 +19,16 @@
 }
 
 .search_button{
-    width: 75px;
+    width: 70px;
     border: 2px solid black;
     border-radius: 4px;
     padding: 5px;
+    background-color: grey;
 }
 
 .search_button:focus{
     border-color: dodgerblue;
     box-shadow: 0 0 8px 0 dodgerblue;
+    background-color: rgb(93, 93, 93);
+    color: white;
 }
