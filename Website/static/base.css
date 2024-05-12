@@ -7,10 +7,13 @@
   }
 
 .search_bar{
-    width: 300px;
-    height: 50px;
-    text-align: center;
-    font: Serif;
-    color: black;
-    font-size: 20px;
+    width: 100%;
+    border: 2px solid black;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+.search_bar:focus{
+    border-color: dodgerblue;
+    box-shadow: 0 0 8px 0 dodgerblue;
 }
