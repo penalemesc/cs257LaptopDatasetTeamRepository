@@ -1,0 +1,15 @@
+.laptopText-class {
+    font-family: sans-serif;
+    text-align: center;
+    color: DarkSlateBlue;
+    text-decoration: underline;
+}
+
+.mainOutput-class {
+    padding: 16px;
+    background-color: lightblue;
+    font-family: Garamond;
+    text-align: center;
+    color: lightslategray;
+    text-decoration: underline;
+}
