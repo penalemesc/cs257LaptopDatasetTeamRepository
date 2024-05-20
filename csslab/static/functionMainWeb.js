@@ -23,3 +23,15 @@ function submitCompiledLink() {
     window.location.href = compiledLink;
 }
 
+//If its not inverted it inverts it
+invertion = false;
+document.getElementById('about_us_button').onmouseover = function changeColoursforButtons() {
+  if (invertion == false){
+  	this.style.webkitFilter = "invert(100%)";
+    invertion = true;
+  }
+	else {
+  	this.style.webkitFilter = "invert(0)";
+    invertion = false;
+  }
+};
