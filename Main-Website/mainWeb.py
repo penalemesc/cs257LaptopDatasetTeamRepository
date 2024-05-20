@@ -12,6 +12,10 @@ app = Flask(__name__)
 def welcome():
     return render_template("mainWebsite.html")
 
+@app.route('/about-us')
+def aboutUsPage():
+    return render_template("aboutUs.html")
+
 #Displays the filtered options results
 @app.route('/display/<brand>/<ram>/<storage>')
 def displayLaptopChosen(brand,ram,storage):

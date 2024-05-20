@@ -12,5 +12,5 @@ def about_us():
     return render_template("about_us.html")
 
 if __name__ == '__main__':
-    my_port = 5112
+    my_port = 5120
     app.run(host='0.0.0.0', port = my_port) 
