@@ -1,10 +1,45 @@
 <!DOCTYPE html>
 <html>
  
-<head>
-  <link rel="stylesheet" href="/static/aboutUs.css">
+<body onclick="clickOut(event)">
 
-</head>
+    <head>
+        <link rel="stylesheet" href="/static/changeMainWeb.css">
+        <link rel="stylesheet" href="/static/aboutUs.css">
+        <script src="/static/base.js"></script>
+        <script src="/static/functionMainWeb.js"> </script>
+        <script src="/static/aboutUs.js"></script>
+    </head>
+
+
+    <h1 class="main_heading" id="Title">
+
+        <div>
+            <a href="/">
+                <img id="logo" src="/static/possible_logo.png" width="60%" height="55%">
+            </a>
+        </div>
+
+        <div class="button-cont">
+            <a href="/">
+                <button class="search_button" id="home_button">
+                    Home
+                </button>
+            </a>
+
+            <a href="/about-us">
+                <button class="search_button" id="about_us_button" onclick="go_about_us()">
+                    About Us
+                </button>
+            </a>
+        </div>
+
+        <div class="button-cont">
+            <input class="search_bar" id="user-search" placeholder="Search">
+            <button class="search_button" id="search_button" onclick="search()">
+                Search
+            </button>
+        </div>
  
 <body>
     <h2 class="title">
@@ -22,8 +57,6 @@
       Insert pictures of group members
     </b>
 
-    
-    <script src="/static/aboutUs.js"></script>
 </body>
  
 </html>
