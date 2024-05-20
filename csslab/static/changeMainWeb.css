@@ -87,6 +87,11 @@ h1 {
   box-shadow: 0 0 8px 0 dodgerblue;
 }
 
+.search_button:hover {
+  color:white;
+  background-color: black;
+}
+
 .button-cont {
   display: flex;
   gap: 15px;
