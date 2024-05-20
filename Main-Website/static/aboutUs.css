@@ -1,6 +1,6 @@
 .title{
     text-align: center;
-    color: lightblue;
+    color: lightslategray;
     font-size: 25px;
     font-family: Garamond;
 }
@@ -8,19 +8,21 @@
 .center-para{
   text-align: center;
   font-size: 15px;
+  color: lightslategray;
   font-family: Garamond;
 }
 
 .title2{
   text-align: center;
   font-size: 25px;
-  color: lightblue;
+  color: lightslategray;
   font-family: Garamond;
 }
 
 .center-para2{
   text-align: center;
   font-size: 15px;
+  color: lightslategray;
   font-family: Garamond;
 }
 
