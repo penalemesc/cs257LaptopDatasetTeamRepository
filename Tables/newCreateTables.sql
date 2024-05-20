@@ -1,7 +1,7 @@
 DROP TABLE IF EXISTS laptops cascade;
 
     CREATE TABLE laptops (
-    laptopIndex int not null,
+    laptopIndex int NOT NULL PRIMARY KEY,
     Brand text not null,
     Laptop_Name varchar(150) not null,
     Price real not null,
