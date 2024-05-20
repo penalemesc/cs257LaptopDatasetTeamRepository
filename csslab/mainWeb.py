@@ -2,10 +2,7 @@ from flask import Flask, render_template, jsonify
 import psycopg2
 import json
 
-
-
 app = Flask(__name__)
-
 
 #Welcome Page
 @app.route('/')
