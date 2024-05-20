@@ -25,7 +25,7 @@ function submitCompiledLink() {
 
 //If its not inverted it inverts it
 invertion = false;
-document.getElementById('about_us_button').onmouseover = function changeColoursforButtons() {
+document.getElementById('about_us_button').onmouseover = function() {
   if (invertion == false){
   	this.style.webkitFilter = "invert(100%)";
     invertion = true;
