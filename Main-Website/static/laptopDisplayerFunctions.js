@@ -54,6 +54,7 @@ function generateDisplay(data) {
     const laptop_screensize = data.screensizeLaptop
     const laptop_touchscreen = data.touchscreenLaptop
 
+ 
     console.log(laptopNames);
     console.log(laptopPrices);
     console.log(laptop_CPU);
@@ -78,6 +79,7 @@ function generateDisplay(data) {
 
         const title = document.createElement('h2');
         title.textContent = laptopNames[i].split('(')[0]
+        title.style = black;
 
         const info = document.createElement('p');
         info.className = 'laptopText-class';
