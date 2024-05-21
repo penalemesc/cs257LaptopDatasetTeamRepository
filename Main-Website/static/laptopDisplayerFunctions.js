@@ -76,10 +76,11 @@ function generateDisplay(data) {
         const info = document.createElement('p');
         info.className = 'laptopText-class';
         info.id = 'laptopInfo';
+        
         info.innerHTML =  `
-                    <strong>Price of Laptop:</strong> ${laptopPrices[i]} <br>
-                    <strong>Ram:</strong> ${laptop_RAM[i]} <br>
-                `;
+                        <strong>Price of Laptop:</strong> ${laptopPrices[i]} <br>
+                        <strong>Ram:</strong> ${laptop_RAM[i]} <br>
+                          `;
 
         profileDetails.appendChild(title);
         profileDetails.appendChild(info);
