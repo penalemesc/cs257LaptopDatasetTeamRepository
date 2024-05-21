@@ -76,16 +76,14 @@ def searchFunction(wordSearched):
     cur = conn.cursor()
 
     query = """
-    SELECT Laptop_Name, Price 
-    FROM laptops 
-    WHERE 
+        SELECT Laptop_Name, Price, CPU, RAM, Screen_Size, Touchscreen FROM laptops WHERE 
         Brand LIKE %s OR 
         Laptop_Name LIKE %s OR 
         CAST(Price AS TEXT) LIKE %s OR 
         Processor_Brand LIKE %s OR 
         GPU LIKE %s OR 
         OS LIKE %s;
-    """
+        """
     search_pattern = '%' + wordSearched + '%'
     cur.execute(query, (search_pattern, search_pattern, search_pattern, search_pattern, search_pattern, search_pattern))
 
@@ -98,11 +96,18 @@ def searchFunction(wordSearched):
 
     laptopsName = [row[0] for row in rows]
     laptopsPrices = [row[1] for row in rows]
+    laptop_CPU = [row[2] for row in rows]
+    laptop_RAM = [row[3] for row in rows]
+    laptop_screensize =  [row[4] for row in rows]
+    laptop_touchscreen =  [row[5] for row in rows]
 
     cur.close()
     conn.close()
 
-    json_answer = {'nameForLaptop': laptopsName, 'priceForLaptop': laptopsPrices}
+    json_answer = {'nameForLaptop' : laptopsName, 'priceForLaptop' : laptopsPrices,
+                   'CpuForLaptop' : laptop_CPU, 'RamForLaptop' : laptop_RAM,
+                   'screensizeLaptop' : laptop_screensize, 'touchscreenLaptop' : laptop_touchscreen}
+    
     return json.dumps(json_answer)
 
 if __name__ == '__main__':

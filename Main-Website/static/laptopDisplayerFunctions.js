@@ -49,29 +49,52 @@ function generateDisplay(data) {
 
     const laptopNames = data.nameForLaptop;
     const laptopPrices = data.priceForLaptop;
+    const laptop_CPU = data.CpuForLaptop
+    const laptop_RAM = data.RamForLaptop
+    const laptop_screensize = data.screensizeLaptop
+    const laptop_touchscreen = data.touchscreenLaptop
 
     console.log(laptopNames);
     console.log(laptopPrices);
+    console.log(laptop_CPU);
+    console.log(laptop_RAM);
+    console.log(laptop_screensize);
+    console.log(laptop_touchscreen);
 
     const container = document.getElementById("myDIV");
     container.innerHTML = ''; // Clear previous contents
 
     for (let i = 0; i < laptopNames.length; i++) {
+
+        const div = document.createElement("div");
+        div.className = 'profile-card';
+        
         let pic = document.createElement('img');
-        const nameHeading = document.createElement("h2");
-        const pricePara = document.createElement("h3");
-
-        let nameText = document.createTextNode("Name of Laptop: " + laptopNames[i]);
-        let priceText = document.createTextNode("Price: $" + laptopPrices[i]);
-
         pic.src = "/static/LaptopImages/laptop_3.png";
+        pic.classNmae = 'profile-pic';
 
-        nameHeading.appendChild(nameText);
-        pricePara.appendChild(priceText);
+        const profileDetails = document.createElement('div');
+        profileDetails.className = 'profile-details';
 
+        const title = document.createElement('h2');
+        title.textContent = laptopNames[i];
+
+        const info = document.createElement('p');
+        info.className = 'laptopText-class';
+        info.id = 'laptopInfo';
+        info.innerHTML =  `
+                    <strong>Name of Laptop:</strong>  <br>
+                    <strong>Price of Laptop:</strong> ${laptopPrices[i]} <br>
+                    <strong>Ram:</strong> ${laptop_RAM[i]} <br>
+                    <strong>Screen Size:</strong> ${laptop_screensize}
+                `;
+
+        profileDetails.appendChild(title);
+        profileDetails.appendChild(info);
+        profileCard.appendChild(pic);
+        profileCard.appendChild(profileDetails);
+        
         // Append to myDIV:
-        container.appendChild(pic);
-        container.appendChild(nameHeading);
-        container.appendChild(pricePara);
+        container.appendChild(profileCard);
     }
 }
