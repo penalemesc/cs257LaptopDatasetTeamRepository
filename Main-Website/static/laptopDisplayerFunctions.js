@@ -79,7 +79,6 @@ function generateDisplay(data) {
 
         const title = document.createElement('h2');
         title.textContent = laptopNames[i].split('(')[0]
-        title.style = black;
 
         const info = document.createElement('p');
         info.className = 'laptopText-class';
