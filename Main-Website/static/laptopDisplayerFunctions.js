@@ -49,10 +49,11 @@ function generateDisplay(data) {
 
     const laptopNames = data.nameForLaptop;
     const laptopPrices = data.priceForLaptop;
-    const laptop_CPU = data.CpuForLaptop
-    const laptop_RAM = data.RamForLaptop
-    const laptop_screensize = data.screensizeLaptop
-    const laptop_touchscreen = data.touchscreenLaptop
+    const laptop_CPU = data.CpuForLaptop;
+    const laptop_RAM = data.RamForLaptop;
+    const laptop_screensize = data.screensizeLaptop;
+    const laptop_touchscreen = data.touchscreenLaptop;
+    const laptopImageIndex = data.imageIndex;
 
     const container = document.getElementById("myDIV");
     container.innerHTML = ''; // Clear previous contents
@@ -62,8 +63,8 @@ function generateDisplay(data) {
         const div = document.createElement("div");
         div.className = 'profile-card';
         
-        let pic = document.createElement('img');
-        pic.src = "/static/LaptopImages/laptop_3.png";
+        const pic = document.createElement('img');
+        pic.src = "/static/LaptopImages/laptop_" + laptopImageIndex[i].toString() + ".png";
         pic.className = 'profile-pic';
 
         const profileDetails = document.createElement('div');
