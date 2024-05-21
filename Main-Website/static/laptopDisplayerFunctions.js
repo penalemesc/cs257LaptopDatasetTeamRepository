@@ -54,14 +54,6 @@ function generateDisplay(data) {
     const laptop_screensize = data.screensizeLaptop
     const laptop_touchscreen = data.touchscreenLaptop
 
- 
-    console.log(laptopNames);
-    console.log(laptopPrices);
-    console.log(laptop_CPU);
-    console.log(laptop_RAM);
-    console.log(laptop_screensize);
-    console.log(laptop_touchscreen);
-
     const container = document.getElementById("myDIV");
     container.innerHTML = ''; // Clear previous contents
 
