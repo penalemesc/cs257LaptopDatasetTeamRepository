@@ -71,7 +71,7 @@ function generateDisplay(data) {
         
         let pic = document.createElement('img');
         pic.src = "/static/LaptopImages/laptop_3.png";
-        pic.classNmae = 'profile-pic';
+        pic.className = 'profile-pic';
 
         const profileDetails = document.createElement('div');
         profileDetails.className = 'profile-details';
@@ -91,10 +91,10 @@ function generateDisplay(data) {
 
         profileDetails.appendChild(title);
         profileDetails.appendChild(info);
-        profileCard.appendChild(pic);
-        profileCard.appendChild(profileDetails);
+        div.appendChild(pic);
+        div.appendChild(profileDetails);
         
         // Append to myDIV:
-        container.appendChild(profileCard);
+        container.appendChild(div);
     }
 }
