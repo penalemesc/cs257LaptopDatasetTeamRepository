@@ -37,7 +37,14 @@ def laptopBrandChosen(brand, ram, storage):
     intRam = int(ram)
     intStor = int(storage)
     
-    query = "SELECT Laptop_Name, Price, laptopindex FROM laptops WHERE Brand = %s AND RAM = %s AND Storage = %s;"
+    query = '''
+            SELECT Laptop_Name, Price, CPU, RAM, 
+            Screen_Size, Touchscreen, laptopindex FROM laptops 
+            WHERE Brand = %s 
+            AND RAM = %s 
+            AND Storage = %s;
+            '''
+    
     cur.execute(query, (brand, intRam, intStor))
 
     rows = cur.fetchall()
@@ -49,13 +56,21 @@ def laptopBrandChosen(brand, ram, storage):
     
     laptopsName = [row[0] for row in rows]
     laptopsPrices = [row[1] for row in rows]
-    laptopImages = [row[2] for row in rows]
+    laptop_CPU = [row[2] for row in rows]
+    laptop_RAM = [row[3] for row in rows]
+    laptop_screensize =  [row[4] for row in rows]
+    laptop_touchscreen =  [row[5] for row in rows]
+    laptopImages = [row[6] for row in rows]
     
     
     cur.close()
     conn.close()
     
-    json_answer = {'nameForLaptop': laptopsName, 'priceForLaptop': laptopsPrices, 'imageIndex': laptopImages}
+    json_answer = {'nameForLaptop' : laptopsName, 'priceForLaptop' : laptopsPrices,
+                   'CpuForLaptop' : laptop_CPU, 'RamForLaptop' : laptop_RAM,
+                   'screensizeLaptop' : laptop_screensize, 'touchscreenLaptop' : laptop_touchscreen, 
+                   'imageIndex': laptopImages}
+    
     return json.dumps(json_answer)
 
 
@@ -77,15 +92,16 @@ def searchFunction(wordSearched):
     
     cur = conn.cursor()
 
-    query = """
-        SELECT Laptop_Name, Price, CPU, RAM, Screen_Size, Touchscreen, laptopindex FROM laptops WHERE 
-        Brand LIKE %s OR 
-        Laptop_Name LIKE %s OR 
-        CAST(Price AS TEXT) LIKE %s OR 
-        Processor_Brand LIKE %s OR 
-        GPU LIKE %s OR 
-        OS LIKE %s;
-        """
+    query = '''
+            SELECT Laptop_Name, Price, CPU, RAM, 
+            Screen_Size, Touchscreen, laptopindex FROM laptops WHERE 
+            Brand LIKE %s OR 
+            Laptop_Name LIKE %s OR 
+            CAST(Price AS TEXT) LIKE %s OR 
+            Processor_Brand LIKE %s OR 
+            GPU LIKE %s OR 
+            OS LIKE %s;
+            '''
     search_pattern = '%' + wordSearched + '%'
     cur.execute(query, (search_pattern, search_pattern, search_pattern, search_pattern, search_pattern, search_pattern))
 
@@ -109,7 +125,8 @@ def searchFunction(wordSearched):
 
     json_answer = {'nameForLaptop' : laptopsName, 'priceForLaptop' : laptopsPrices,
                    'CpuForLaptop' : laptop_CPU, 'RamForLaptop' : laptop_RAM,
-                   'screensizeLaptop' : laptop_screensize, 'touchscreenLaptop' : laptop_touchscreen, 'imageIndex': laptopImages}
+                   'screensizeLaptop' : laptop_screensize, 'touchscreenLaptop' : laptop_touchscreen, 
+                   'imageIndex': laptopImages}
     
     return json.dumps(json_answer)
 
