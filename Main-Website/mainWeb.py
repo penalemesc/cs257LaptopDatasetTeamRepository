@@ -70,7 +70,7 @@ def laptopBrandChosen(brand, ram, storage):
                    'CpuForLaptop' : laptop_CPU, 'RamForLaptop' : laptop_RAM,
                    'screensizeLaptop' : laptop_screensize, 'touchscreenLaptop' : laptop_touchscreen, 
                    'imageIndex': laptopImages}
-    
+                   
     return json.dumps(json_answer)
 
 
@@ -102,6 +102,7 @@ def searchFunction(wordSearched):
             GPU LIKE %s OR 
             OS LIKE %s;
             '''
+    
     search_pattern = '%' + wordSearched + '%'
     cur.execute(query, (search_pattern, search_pattern, search_pattern, search_pattern, search_pattern, search_pattern))
 
