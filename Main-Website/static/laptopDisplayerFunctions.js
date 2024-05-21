@@ -77,16 +77,14 @@ function generateDisplay(data) {
         profileDetails.className = 'profile-details';
 
         const title = document.createElement('h2');
-        title.textContent = laptopNames[i];
+        title.textContent = laptopNames[i].split('(')[0]
 
         const info = document.createElement('p');
         info.className = 'laptopText-class';
         info.id = 'laptopInfo';
         info.innerHTML =  `
-                    <strong>Name of Laptop:</strong>  <br>
                     <strong>Price of Laptop:</strong> ${laptopPrices[i]} <br>
                     <strong>Ram:</strong> ${laptop_RAM[i]} <br>
-                    <strong>Screen Size:</strong> ${laptop_screensize}
                 `;
 
         profileDetails.appendChild(title);
