@@ -1,15 +1,14 @@
 .laptopText-class {
     font-family: sans-serif;
     text-align: center;
-    color: DarkSlateBlue;
-    text-decoration: underline;
+    color: rgb(0, 0, 0);
 }
 
 .mainOutput-class {
     padding: 16px;
-    background-color: lightblue;
+    background-color: #add8e6;
     font-family: Garamond;
     text-align: center;
-    color: rgb(64, 0, 166);
+    color: rgb(75, 0, 196);
     font-weight: bold;
 }
