@@ -1,3 +1,10 @@
+#myDIV {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
 .profile-card {
     background-color: #fff;
     border-radius: 10px;
@@ -7,7 +14,7 @@
     padding: 20px;
     max-width: 700px;
     width: 100%;
-    margin: 15px auto;
+    margin: 15px;
     box-sizing: border-box;
 }
 
@@ -23,7 +30,8 @@
 .profile-details {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-end;
+    text-align: right;
 }
 
 .laptopText-class {
