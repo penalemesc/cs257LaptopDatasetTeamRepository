@@ -1,10 +1,3 @@
-#myDIV {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 20px;
-}
-
 .profile-card {
     background-color: #fff;
     border-radius: 10px;
