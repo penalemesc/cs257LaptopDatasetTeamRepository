@@ -38,6 +38,7 @@ function onloadSearchFunct() {
 //This file needs to be worked on to properly display the correct image for 
 //each laptop
 function generateDisplay(data) {
+    
     if (!data.nameForLaptop || !data.priceForLaptop) {
         // Display an error message if the expected data is not found
         const container = document.getElementById("myDIV");
