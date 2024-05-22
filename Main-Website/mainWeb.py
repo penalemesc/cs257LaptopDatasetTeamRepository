@@ -66,9 +66,12 @@ def laptopBrandChosen(brand, ram, storage):
     cur.close()
     conn.close()
     
-    json_answer = {'nameForLaptop' : laptopsName, 'priceForLaptop' : laptopsPrices,
-                   'CpuForLaptop' : laptop_CPU, 'RamForLaptop' : laptop_RAM,
-                   'screensizeLaptop' : laptop_screensize, 'touchscreenLaptop' : laptop_touchscreen, 
+    json_answer = {'nameForLaptop' : laptopsName, 
+                   'priceForLaptop' : laptopsPrices,
+                   'CpuForLaptop' : laptop_CPU, 
+                   'RamForLaptop' : laptop_RAM,
+                   'screensizeLaptop' : laptop_screensize, 
+                   'touchscreenLaptop' : laptop_touchscreen, 
                    'imageIndex': laptopImages}
                    
     return json.dumps(json_answer)
@@ -124,9 +127,12 @@ def searchFunction(wordSearched):
     cur.close()
     conn.close()
 
-    json_answer = {'nameForLaptop' : laptopsName, 'priceForLaptop' : laptopsPrices,
-                   'CpuForLaptop' : laptop_CPU, 'RamForLaptop' : laptop_RAM,
-                   'screensizeLaptop' : laptop_screensize, 'touchscreenLaptop' : laptop_touchscreen, 
+    json_answer = {'nameForLaptop' : laptopsName, 
+                   'priceForLaptop' : laptopsPrices,
+                   'CpuForLaptop' : laptop_CPU, 
+                   'RamForLaptop' : laptop_RAM,
+                   'screensizeLaptop' : laptop_screensize, 
+                   'touchscreenLaptop' : laptop_touchscreen, 
                    'imageIndex': laptopImages}
     
     return json.dumps(json_answer)
