@@ -30,3 +30,11 @@
     text-align: center;
     background-color: lightblue;
 }
+
+
+.cuprum {
+  font-family: "Cuprum", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 10px;
+  font-style: normal;
+}
