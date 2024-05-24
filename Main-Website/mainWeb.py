@@ -2,10 +2,7 @@ from flask import Flask, render_template, jsonify
 import psycopg2
 import json
 
-
-
 app = Flask(__name__)
-
 
 #Welcome Page
 @app.route('/')
@@ -49,6 +46,7 @@ def laptopBrandChosen(brand, ram, storage):
 
     rows = cur.fetchall()
     
+    #this checks so that if there are no any laptops that match the specification, the site doesnt crash
     if not rows:
         cur.close()
         conn.close()
@@ -111,6 +109,7 @@ def searchFunction(wordSearched):
 
     rows = cur.fetchall()
 
+    #this checks so that if there are no any laptops that match the specification, the site doesnt crash
     if not rows:
         cur.close()
         conn.close()

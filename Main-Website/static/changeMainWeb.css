@@ -77,6 +77,11 @@ h1 {
   padding: 5px;
 }
 
+.search_button:hover {
+  color: rgb(2, 27, 26);
+  background-color: gray;
+}
+
 .search_button:focus {
   border-color: dodgerblue;
   box-shadow: 0 0 8px 0 dodgerblue;
