@@ -27,29 +27,24 @@
     background-color: lightblue;
 }
 
-.aboutUsMason{
+.aboutUsMason img{
   width: 300px;
   height: 300px;
 }
 
-.aboutUsConrado{
-  width: 600px;
-  height: 600px;
+.aboutUsConrado img{
+  width: 300px;
+  height: 300px;
 }
 
-.aboutUsJoshua{
-  width: 900px;
-  height: 900px;
+.aboutUsRandy img{
+  width: 300px;
+  height: 300px;
 }
 
-.aboutUsRandy{
-  width: 1200px;
-  height: 1200px;
-}
-
-.aboutUsJared{
-  width: 1500px;
-  height: 1500px;
+.aboutUsJared img{
+  width: 300px;
+  height: 300px;
 }
 
 .cuprum {
