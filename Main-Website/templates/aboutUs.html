@@ -75,4 +75,78 @@
 
 </body>
 
+<html>
+
+<body onclick="clickOut(event)">
+
+    <head>
+        <link rel="stylesheet" href="/static/aboutUs.css">
+        <link rel="stylesheet" href="/static/changeMainWeb.css">
+        <script src="/static/base.js"></script>
+        <script src="/static/functionMainWeb.js"> </script>
+        <script src="/static/aboutUs.js"></script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cuprum:ital,wght@0,400..700;1,400..700&display=swap"
+            rel="stylesheet">
+    </head>
+
+
+    <h1 class="main_heading" id="Title">
+
+        <div>
+            <a href="/">
+                <img id="logo" src="/static/possible_logo.png" width="60%" height="55%">
+            </a>
+        </div>
+
+        <div class="button-cont">
+            <a href="/">
+                <button class="search_button" id="home_button">
+                    Home
+                </button>
+            </a>
+
+            <a href="/about-us">
+                <button class="search_button" id="about_us_button" onclick="go_about_us()">
+                    About Us
+                </button>
+            </a>
+        </div>
+
+        <div class="button-cont">
+            <input class="search_bar" id="user-search" placeholder="Search">
+            <button class="search_button" id="search_button" onclick="search()">
+                Search
+            </button>
+        </div>
+    </h1>
+
+    <body class="aboutUsPage cuprum">
+        <h1 class="title">
+            About
+        </h1>
+
+        <b class="center-para"> We're Carleton Tampa. We are a group of college students at Carleton College creating a
+            website so everyone can find a laptop with ease.
+        </b>
+
+        <h2 class="title2">
+            Meet the team!
+        </h2>
+
+        <div class="aboutUsPicturesTop">
+            <img id="mason" src="/static/AboutUsImagesCropped/aboutUsMasonCropped.jpg">
+            <img id="conrado" src="/static/AboutUsImagesCropped/aboutUsConradoCropped.jpg">
+            <img id="randy" src="/static/AboutUsImagesCropped/aboutUsRandyCropped.jpg">
+        </div>
+        
+        <div class="aboutUsPicturesBottom">
+            <img id="jared" src="/static/AboutUsImagesCropped/aboutUsJaredCropped.jpg">
+        </div>
+    </body>
+
+</body>
+
 </html>

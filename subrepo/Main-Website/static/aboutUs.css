@@ -1,0 +1,36 @@
+.title{
+    text-align: center;
+    color: lightslategray;
+    font-size: 25px;
+}
+
+.center-para{
+  text-align: center;
+  font-size: 15px;
+  color: lightslategray;
+}
+
+.title2{
+  text-align: center;
+  font-size: 25px;
+  color: lightslategray;
+}
+
+.center-para2{
+  text-align: center;
+  font-size: 15px;
+  color: lightslategray;
+}
+
+.aboutUsPage{
+    text-align: center;
+    background-color: lightblue;
+}
+
+
+.cuprum {
+  font-family: "Cuprum", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 10px;
+  font-style: normal;
+}

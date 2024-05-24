@@ -1,0 +1,59 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laptop Display</title>
+    <link rel="stylesheet" href="/static/changeMainWeb.css">
+    <link rel="stylesheet" href="/static/modifyLaptopDisplayer.css">
+    <link rel="stylesheet" href="/static/laptop_cards.css">
+    <script src="/static/laptopDisplayerFunctions.js" defer></script>
+    <script src="/static/functionMainWeb.js" defer></script>
+</head>
+
+<body onload="onloadSearchFunct()">
+    <header class="headerText-class">
+        <a href="/">
+            <img id="logo" src="/static/possible_logo.png" alt="Logo" width="60" height="55">
+        </a>
+        <nav>
+            <a href="/">
+                <button class="search_button" id="home_button">Home</button>
+            </a>
+            <a href="/about-us">
+                <button class="search_button" id="about_us_button" onclick="go_about_us()">About Us</button>
+            </a>
+            <div class="search-container">
+                <input class="search_bar" id="user-search" placeholder="Search">
+                <button class="search_button" id="search_button" onclick="search()">Search</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="secondTitle cuprum">
+            <h1>Laptop Display</h1>
+        </section>
+
+        <div class="mainOutput-class" id="myDIV">
+            <!-- Content dynamically loaded here -->
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Carleton Tampa. All rights reserved.</p>
+    </footer>
+
+    <script>
+        var input = document.getElementById("user-search");
+
+        input.addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                document.getElementById("search_button").click();
+            }
+        });
+    </script>
+</body>
+
+</html>
