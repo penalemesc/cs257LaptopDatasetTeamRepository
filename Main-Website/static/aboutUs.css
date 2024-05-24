@@ -27,7 +27,12 @@
     background-color: lightblue;
 }
 
-.aboutUsPictures img{
+.aboutUsPicturesTop img{
+  width: 300px;
+  height: 300px;
+}
+
+.aboutUsPicturesBottom img{
   width: 300px;
   height: 300px;
 }
