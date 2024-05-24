@@ -79,7 +79,7 @@ h1 {
 
 .search_button:hover {
   color: rgb(255, 255, 255);
-  background-color: gray;
+  background-color: rgb(146, 146, 146);
 }
 
 .search_button:focus {
