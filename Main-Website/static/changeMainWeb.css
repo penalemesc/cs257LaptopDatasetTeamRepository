@@ -3,14 +3,12 @@ h1 {
 }
 
 .headerText-class {
-  font-family: sans-serif;
   text-align: center;
   color: DarkSlateBlue;
   text-decoration: underline;
 }
 
 .introductionText-class {
-  font-family: Garamond;
   text-align: center;
   color: lightslategray;
   font-size: 23px;
@@ -18,7 +16,6 @@ h1 {
 }
 
 .mainText-class {
-  font-family: sans-serif;
   text-align: center;
   color: CornflowerBlue;
   font-weight: bold;
@@ -47,7 +44,6 @@ h1 {
 .secondTitle {
   text-align: center;
   color: #53b2d2;
-  font: Garamond;
   background-color: antiquewhite;
   font-size: 70px;
 }
@@ -56,7 +52,6 @@ h1 {
   text-align: center;
   color: white;
   background-color: #cfe2f3;
-  font: Garamond;
   font-size: 70px;
   display: flex;
   align-items: center;
@@ -90,4 +85,11 @@ h1 {
 .button-cont {
   display: flex;
   gap: 15px;
+}
+
+.cuprum {
+  font-family: "Cuprum", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 10px;
+  font-style: normal;
 }
