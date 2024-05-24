@@ -27,6 +27,11 @@
     background-color: lightblue;
 }
 
+.aboutUsMason{
+  width: 400px;
+  height: 400px;
+}
+
 .cuprum {
   font-family: "Cuprum", sans-serif;
   font-optical-sizing: auto;
