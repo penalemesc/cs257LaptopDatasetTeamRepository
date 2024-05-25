@@ -39,6 +39,28 @@
   border-radius: 50%;
 }
 
+.nameConrado{
+  position: relative;
+}
+
+.nameRandy{
+  position: relative;
+  bottom:69px;
+  left: 354px;
+}
+
+.nameMason{
+  position: relative;
+  bottom: 139px;
+  right: 354px;
+}
+
+.nameJared{
+  position: relative;
+  bottom: 100px;
+  right: 175px;
+}
+
 .cuprum {
   font-family: "Cuprum", sans-serif;
   font-optical-sizing: auto;
