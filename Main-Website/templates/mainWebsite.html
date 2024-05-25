@@ -1,98 +1,98 @@
 <html>
 
-<body onclick="clickOut(event)">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carleton Tampa</title>
+    <link rel="stylesheet" href="/static/changeMainWeb.css">
+    <script src="/static/base.js"></script>
+    <script src="/static/functionMainWeb.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cuprum:wght@400;700&display=swap" rel="stylesheet">
+</head>
 
-    <head>
-        <link rel="stylesheet" href="/static/changeMainWeb.css">
-        <script src="/static/base.js"></script>
-        <script src="/static/functionMainWeb.js"> </script>
-
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Cuprum:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
-    </head>
-
-
-    <h1 class="main_heading" id="Title">
-
-        <div>
+<body>
+    <header class="headerText-class">
+        <a href="/">
+            <img id="logo" src="/static/possible_logo.png" alt="Logo" width="60" height="55">
+        </a>
+        <nav>
             <a href="/">
-                <img id="logo" src="/static/possible_logo.png" width="60%" height="55%">
+                <button class="search_button" id="home_button">Home</button>
             </a>
-        </div>
-
-        <div class="button-cont">
-            <a href="/">
-                <button class="search_button" id="home_button">
-                    Home
-                </button>
-            </a>
-
             <a href="/about-us">
-                <button class="search_button" id="about_us_button" onclick="go_about_us()">
-                    About Us
-                </button>
+                <button class="search_button" id="about_us_button" onclick="go_about_us()">About Us</button>
             </a>
+            <div class="search-container">
+                <input class="search_bar" id="user-search" placeholder="Search">
+                <button class="search_button" id="search_button" onclick="search()">Search</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="secondTitle cuprum">
+            <h1>Choose Laptop Specifications Here!</h1>
+        </section>
+
+        <section class="introductionText-class cuprum">
+            <p>This is a webpage dedicated to laptops! It will list all the laptops for the brands listed in the dropdown menu and other specifications in other dropdowns!</p>
+        </section>
+
+        <form>
+            <div style="text-align: center;">
+                <label for="brand">What Brand?</label>
+                <select id="brand">
+                    <option selected disabled>Choose Brand</option>
+                    <option value="apple">Apple</option>
+                    <option value="dell">Dell</option>
+                    <option value="hp">HP</option>
+                    <option value="lenovo">Lenovo</option>
+                </select>
+            </div>
+
+            <div style="text-align: center;">
+                <label for="ram">What Ram Size?</label>
+                <select id="ram">
+                    <option selected disabled>Choose Ram Size</option>
+                    <option value="4">4 GB</option>
+                    <option value="8">8 GB</option>
+                    <option value="16">16 GB</option>
+                    <option value="32">32 GB</option>
+                </select>
+            </div>
+
+            <div style="text-align: center;">
+                <label for="storage">What Storage Size?</label>
+                <select id="storage">
+                    <option selected disabled>Choose Storage Size</option>
+                    <option value="64">64 GB</option>
+                    <option value="256">256 GB</option>
+                    <option value="512">512 GB</option>
+                    <option value="1024">1024 GB</option>
+                </select>
+            </div>
+        </form>
+        <div class="button-container">
+            <button type="button" class="button" onclick="submitCompiledLink()">Submit Specs</button>
         </div>
+    </main>
 
-        <div class="button-cont">
-            <input class="search_bar" id="user-search" placeholder="Search">
-            <button class="search_button" id="search_button" onclick="search()">
-                Search
-            </button>
-        </div>
+    <footer class="footer">
+        <p>&copy; 2024 Carleton Tampa. All rights reserved.</p>
+    </footer>
 
-    </h1>
-    <h1 class="secondTitle cuprum">Choose Laptop Specifications Here!</h1>
-    <h3 class="introductionText-class cuprum" id="paragraph1">
-        This is a webpage dedicated to laptops! It will list all the laptops for the brands listed in the dropdown menu
-        and other specifications in other dropdowns!
-    </h3>
+    <script>
+        var input = document.getElementById("user-search");
 
-    <form style="text-align: center;">
-        What Brand?
-        <select id="brand">
-            <option selected disabled>Choose Brand</option>
-            <option value="apple">Apple</option>
-            <option value="dell">Dell</option>
-            <option value="hp">HP</option>
-            <option value="lenovo">Lenovo</option>
-        </select>
-
-        What Ram Size?
-        <select id="ram">
-            <option selected disabled>Choose Ram Size</option>
-            <option value="4">4 GB</option>
-            <option value="8">8 GB</option>
-            <option value="16">16 GB</option>
-            <option value="32">32 GB</option>
-        </select>
-
-        What Storage Size?
-        <select id="storage">
-            <option selected disabled>Choose Storage Size</option>
-            <option value="64">64 GB</option>
-            <option value="256">256 GB</option>
-            <option value="512">512 GB</option>
-            <option value="1024">1024 GB</option>
-        </select>
-    </form>
-    <div class="button-container">
-        <button type="button" class="button button2" onclick="submitCompiledLink()">Submit Specs</button>
-    </div>
+        input.addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                document.getElementById("search_button").click();
+            }
+        });
+    </script>
 </body>
-<script>
-    var input = document.getElementById("user-search");
-
-    input.addEventListener("keypress", function (event) {
-
-        if (event.key === "Enter") {
-
-            event.preventDefault();
-
-            document.getElementById("search_button").click();
-        }
-    });
-</script>
 
 </html>
