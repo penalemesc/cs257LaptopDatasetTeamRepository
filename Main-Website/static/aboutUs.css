@@ -61,6 +61,12 @@
   right: 175px;
 }
 
+.nameJoshua {
+  position: relative;
+  bottom: 100px;
+  right: -175px;
+}
+
 .cuprum {
   font-family: "Cuprum", sans-serif;
   font-optical-sizing: auto;
