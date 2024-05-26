@@ -10,36 +10,23 @@
     <script src="/static/laptopDisplayerFunctions.js" defer></script>
     <script src="/static/functionMainWeb.js" defer></script>
 </head>
-<h1 class="main_heading" id="Title">
-
-    <div>
+ <header class="headerText-class">
         <a href="/">
-            <img id="logo" src="/static/possible_logo.png" width="60%" height="55%">
+            <img id="logo" src="/static/possible_logo.png" alt="Logo" width="140" height="130">
         </a>
-    </div>
-
-    <div class="button-cont">
-        <a href="/">
-            <button class="search_button" id="home_button">
-                Home
-            </button>
-        </a>
-
-        <a href="/about-us">
-            <button class="search_button" id="about_us_button" onclick="go_about_us()">
-                About Us
-            </button>
-        </a>
-    </div>
-
-    <div class="button-cont">
-        <input class="search_bar" id="user-search" placeholder="Search">
-        <button class="search_button" id="search_button" onclick="search()">
-            Search
-        </button>
-    </div>
-
-</h1>
+        <nav>
+            <a href="/">
+                <button class="search_button" id="home_button">Home</button>
+            </a>
+            <a href="/about-us">
+                <button class="search_button" id="about_us_button" onclick="go_about_us()">About Us</button>
+            </a>
+            <div class="search-container">
+                <input class="search_bar" id="user-search" placeholder="Search">
+                <button class="search_button" id="search_button" onclick="search()">Search</button>
+            </div>
+        </nav>
+    </header>
 
 <body onload="onLoadFunct()">
 
