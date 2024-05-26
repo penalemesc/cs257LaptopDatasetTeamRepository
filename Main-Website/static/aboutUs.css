@@ -1,61 +1,61 @@
-.title{
-    text-align: center;
-    color: lightslategray;
-    font-size: 25px;
+.title {
+  text-align: center;
+  color: lightslategray;
+  font-size: 25px;
 }
 
-.center-para{
+.center-para {
   text-align: center;
   font-size: 15px;
   color: lightslategray;
 }
 
-.title2{
+.title2 {
   text-align: center;
   font-size: 25px;
   color: lightslategray;
 }
 
-.center-para2{
+.center-para2 {
   text-align: center;
   font-size: 15px;
   color: lightslategray;
 }
 
-.aboutUsPage{
-    text-align: center;
-    background-color: #cfe2f3;
+.aboutUsPage {
+  text-align: center;
+  background-color: #cfe2f3;
 }
 
-.aboutUsPicturesTop img{
+.aboutUsPicturesTop img, .aboutUsPicturesBottom img {
   width: 200px;
   height: 200px;
   border-radius: 50%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.aboutUsPicturesBottom img{
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
+.aboutUsPicturesTop img:hover, .aboutUsPicturesBottom img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.nameConrado{
+.nameConrado {
   position: relative;
 }
 
-.nameRandy{
+.nameRandy {
   position: relative;
-  bottom:69px;
+  bottom: 69px;
   left: 354px;
 }
 
-.nameMason{
+.nameMason {
   position: relative;
   bottom: 139px;
   right: 354px;
 }
 
-.nameJared{
+.nameJared {
   position: relative;
   bottom: 100px;
   right: 175px;
