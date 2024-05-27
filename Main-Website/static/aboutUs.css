@@ -5,7 +5,7 @@
 
 .center-para {
   text-align: center;
-  font-size: 15px;
+  font-size: 19px;
 }
 
 .title2 {
@@ -37,28 +37,34 @@
 
 .nameConrado {
   position: relative;
+  font-size: 19px;
+
 }
 
 .nameRandy {
   position: relative;
+  font-size: 19px;
   bottom: 69px;
   left: 354px;
 }
 
 .nameMason {
   position: relative;
+  font-size: 19px;
   bottom: 139px;
   right: 354px;
 }
 
 .nameJared {
   position: relative;
+  font-size: 19px;
   bottom: 100px;
   right: 170px;
 }
 
 .nameJoshua {
   position: relative;
+  font-size: 19px;
   bottom: 168px;
   left: 190px;
 }
