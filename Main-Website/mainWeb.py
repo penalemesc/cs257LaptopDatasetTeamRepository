@@ -36,7 +36,7 @@ def laptopBrandChosen(brand, ram, storage):
     
     query = '''
             SELECT Laptop_Name, Price, CPU, RAM, 
-            Screen_Size, Touchscreen, laptopindex FROM laptops 
+            Screen_Size, Touchscreen, laptopindex, Storage FROM laptops 
             WHERE Brand = %s 
             AND RAM = %s 
             AND Storage = %s;
@@ -59,6 +59,7 @@ def laptopBrandChosen(brand, ram, storage):
     laptop_screensize =  [row[4] for row in rows]
     laptop_touchscreen =  [row[5] for row in rows]
     laptopImages = [row[6] for row in rows]
+    laptopStorage = [row[7] for row in rows]
     
     
     cur.close()
@@ -70,7 +71,8 @@ def laptopBrandChosen(brand, ram, storage):
                    'RamForLaptop' : laptop_RAM,
                    'screensizeLaptop' : laptop_screensize, 
                    'touchscreenLaptop' : laptop_touchscreen, 
-                   'imageIndex': laptopImages}
+                   'imageIndex': laptopImages,
+                   'storageForLaptop':laptopStorage}
                    
     return json.dumps(json_answer)
 
@@ -95,7 +97,7 @@ def searchFunction(wordSearched):
 
     query = '''
             SELECT Laptop_Name, Price, CPU, RAM, 
-            Screen_Size, Touchscreen, laptopindex FROM laptops WHERE 
+            Screen_Size, Touchscreen, laptopindex, Storage FROM laptops WHERE 
             Brand iLIKE %s OR 
             Laptop_Name iLIKE %s OR 
             CAST(Price AS TEXT) iLIKE %s OR 
@@ -122,6 +124,8 @@ def searchFunction(wordSearched):
     laptop_screensize =  [row[4] for row in rows]
     laptop_touchscreen =  [row[5] for row in rows]
     laptopImages = [row[6] for row in rows]
+    laptopStorage = [row[7] for row in rows]
+    
     
     cur.close()
     conn.close()
@@ -132,7 +136,8 @@ def searchFunction(wordSearched):
                    'RamForLaptop' : laptop_RAM,
                    'screensizeLaptop' : laptop_screensize, 
                    'touchscreenLaptop' : laptop_touchscreen, 
-                   'imageIndex': laptopImages}
+                   'imageIndex': laptopImages,
+                   'storageForLaptop':laptopStorage}
     
     return json.dumps(json_answer)
 

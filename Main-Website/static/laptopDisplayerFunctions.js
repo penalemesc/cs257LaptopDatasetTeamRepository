@@ -55,6 +55,7 @@ function generateDisplay(data) {
     const laptop_screensize = data.screensizeLaptop;
     const laptop_touchscreen = data.touchscreenLaptop;
     const laptopImageIndex = data.imageIndex;
+    const laptopStorage = data.storageForLaptop;
 
     const container = document.getElementById("myDIV");
     container.innerHTML = ''; // Clear previous contents
@@ -80,6 +81,7 @@ function generateDisplay(data) {
 
         info.innerHTML =  `
                         <strong>Price of Laptop:</strong> <strong>$</strong>${laptopPrices[i]} <br>
+                        <strong>Storage:</strong> ${laptopStorage[i]} <br>
                         <strong>Ram:</strong> ${laptop_RAM[i]} <strong>GB</strong> <br>
                           `;
 
