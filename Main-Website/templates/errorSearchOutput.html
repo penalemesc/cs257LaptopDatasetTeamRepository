@@ -31,20 +31,15 @@
 <body onload="onLoadFunct()">
 
     <div class="mainOutput-class" id="myDIV">
+    <!--
+        This extra <p> tag is so that there is consistency between how errors from the 
+        filters and the search bar are displayed
+    -->
+    <p>
+    
+    </p>
+    No laptops found or an error occurred
     </div>
 	
 </body>
-<script>
-    var input = document.getElementById("user-search");
-
-    input.addEventListener("keypress", function (event) {
-
-        if (event.key === "Enter") {
-
-            event.preventDefault();
-
-            document.getElementById("search_button").click();
-        }
-    });
-</script>
 </html>

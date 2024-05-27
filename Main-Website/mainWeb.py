@@ -76,9 +76,10 @@ def laptopBrandChosen(brand, ram, storage):
                    
     return json.dumps(json_answer)
 
+#This is meant to be displayed if there is nothing written in the search bar
 @app.route('/display/')
 def nothingToDisplay():
-    return render_template("searchOutput.html")
+    return render_template("errorSearchOutput.html")
 
 #Displays the search result page
 @app.route('/display/<wordSearched>')
