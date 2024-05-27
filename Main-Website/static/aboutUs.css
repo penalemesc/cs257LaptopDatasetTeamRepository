@@ -1,25 +1,21 @@
 .title {
   text-align: center;
-  color: lightslategray;
   font-size: 25px;
 }
 
 .center-para {
   text-align: center;
-  font-size: 15px;
-  color: lightslategray;
+  font-size: 19px;
 }
 
 .title2 {
   text-align: center;
   font-size: 25px;
-  color: lightslategray;
 }
 
 .center-para2 {
   text-align: center;
   font-size: 15px;
-  color: lightslategray;
 }
 
 .aboutUsPage {
@@ -41,29 +37,35 @@
 
 .nameConrado {
   position: relative;
+  font-size: 19px;
+
 }
 
 .nameRandy {
   position: relative;
-  bottom: 69px;
+  font-size: 19px;
+  bottom: 81px;
   left: 354px;
 }
 
 .nameMason {
   position: relative;
-  bottom: 139px;
+  font-size: 19px;
+  bottom: 165px;
   right: 354px;
 }
 
 .nameJared {
   position: relative;
+  font-size: 19px;
   bottom: 100px;
   right: 170px;
 }
 
 .nameJoshua {
   position: relative;
-  bottom: 168px;
+  font-size: 19px;
+  bottom: 183px;
   left: 190px;
 }
 
