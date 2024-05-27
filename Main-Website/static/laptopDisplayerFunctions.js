@@ -79,8 +79,8 @@ function generateDisplay(data) {
         info.id = 'laptopInfo';
 
         info.innerHTML =  `
-                        <strong>Price of Laptop:</strong> ${laptopPrices[i]} <br>
-                        <strong>Ram:</strong> ${laptop_RAM[i]} <br>
+                        <strong>Price of Laptop:</strong> <strong>$</strong>${laptopPrices[i]} <br>
+                        <strong>Ram:</strong> ${laptop_RAM[i]} <strong>GB</strong> <br>
                           `;
 
         profileDetails.appendChild(title);
