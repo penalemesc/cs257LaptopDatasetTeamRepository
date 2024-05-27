@@ -80,6 +80,7 @@ function generateDisplay(data) {
 
         info.innerHTML =  `
                         <strong>Price of Laptop:</strong> ${laptopPrices[i]} <br>
+                        <strong>Storage:</strong> ${laptop_CPU[i]} <br>
                         <strong>Ram:</strong> ${laptop_RAM[i]} <br>
                           `;
 
