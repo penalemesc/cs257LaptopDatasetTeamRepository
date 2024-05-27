@@ -96,12 +96,12 @@ def searchFunction(wordSearched):
     query = '''
             SELECT Laptop_Name, Price, CPU, RAM, 
             Screen_Size, Touchscreen, laptopindex FROM laptops WHERE 
-            Brand LIKE %s OR 
-            Laptop_Name LIKE %s OR 
-            CAST(Price AS TEXT) LIKE %s OR 
-            Processor_Brand LIKE %s OR 
-            GPU LIKE %s OR 
-            OS LIKE %s;
+            Brand iLIKE %s OR 
+            Laptop_Name iLIKE %s OR 
+            CAST(Price AS TEXT) iLIKE %s OR 
+            Processor_Brand iLIKE %s OR 
+            GPU iLIKE %s OR 
+            OS iLIKE %s;
             '''
     
     search_pattern = '%' + wordSearched + '%'

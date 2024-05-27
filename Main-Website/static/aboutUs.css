@@ -1,64 +1,66 @@
-.title{
-    text-align: center;
-    color: lightslategray;
-    font-size: 25px;
-}
-
-.center-para{
-  text-align: center;
-  font-size: 15px;
-  color: lightslategray;
-}
-
-.title2{
+.title {
   text-align: center;
   font-size: 25px;
-  color: lightslategray;
 }
 
-.center-para2{
+.center-para {
   text-align: center;
   font-size: 15px;
-  color: lightslategray;
 }
 
-.aboutUsPage{
-    text-align: center;
-    background-color: #cfe2f3;
+.title2 {
+  text-align: center;
+  font-size: 25px;
 }
 
-.aboutUsPicturesTop img{
+.center-para2 {
+  text-align: center;
+  font-size: 15px;
+}
+
+.aboutUsPage {
+  text-align: center;
+  background-color: #cfe2f3;
+}
+
+.aboutUsPicturesTop img, .aboutUsPicturesBottom img {
   width: 200px;
   height: 200px;
   border-radius: 50%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.aboutUsPicturesBottom img{
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
+.aboutUsPicturesTop img:hover, .aboutUsPicturesBottom img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.nameConrado{
+.nameConrado {
   position: relative;
 }
 
-.nameRandy{
+.nameRandy {
   position: relative;
-  bottom:69px;
+  bottom: 69px;
   left: 354px;
 }
 
-.nameMason{
+.nameMason {
   position: relative;
   bottom: 139px;
   right: 354px;
 }
 
-.nameJared{
+.nameJared {
   position: relative;
   bottom: 100px;
-  right: 175px;
+  right: 170px;
+}
+
+.nameJoshua {
+  position: relative;
+  bottom: 168px;
+  left: 190px;
 }
 
 .cuprum {
