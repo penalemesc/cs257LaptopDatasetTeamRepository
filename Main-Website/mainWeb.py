@@ -74,6 +74,9 @@ def laptopBrandChosen(brand, ram, storage):
                    
     return json.dumps(json_answer)
 
+@app.route('/display/')
+def nothingToDisplay():
+    return render_template("searchOutput.html")
 
 #Displays the search result page
 @app.route('/display/<wordSearched>')
@@ -137,6 +140,6 @@ def searchFunction(wordSearched):
     return json.dumps(json_answer)
 
 if __name__ == '__main__':
-    my_port = 5120
+    my_port = 5111
     app.run(host='0.0.0.0', port=my_port)
 

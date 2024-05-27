@@ -39,7 +39,7 @@ function onloadSearchFunct() {
 //each laptop
 function generateDisplay(data) {
     
-    if (!data.nameForLaptop || !data.priceForLaptop) {
+    if (!data.nameForLaptop || !data.priceForLaptop || !data) {
         // Display an error message if the expected data is not found
         const container = document.getElementById("myDIV");
         const errorMsg = document.createElement("p");
