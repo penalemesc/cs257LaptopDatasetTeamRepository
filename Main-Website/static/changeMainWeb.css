@@ -82,6 +82,13 @@ select {
   border-radius: 4px;
 }
 
+.typeInput {
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
 .search_bar {
   width: 225px;
   border: 1px solid #ccc;

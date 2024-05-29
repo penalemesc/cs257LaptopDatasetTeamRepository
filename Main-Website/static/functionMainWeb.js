@@ -15,9 +15,17 @@ function submitCompiledLink() {
     var brand = document.getElementById("brand").value;
     var ram = document.getElementById("ram").value;
     var storage = document.getElementById("storage").value;
-    console.log(ram);
+    var price = document.getElementById("price").value;
+    var screenSize = document.getElementById("screenSize").value;
+    var touchScreen = document.getElementById("touchScreen").value;
     // Construct the URL based on selected values
-    var compiledLink = "/display/" + brand + "/" + ram + "/" + storage;
+    var compiledLink = "/display/" 
+    + brand 
+    + "/" + ram 
+    + "/" + storage 
+    + "/" + price 
+    + "/" + screenSize 
+    + "/" + touchScreen;
 
     // Redirect to the compiled link
     window.location.href = compiledLink;

@@ -19,8 +19,8 @@ def displayLaptopChosen(brand,ram,storage):
     return render_template("filterOutput.html")
 
 #Gathers the result for filtered options and return the JSON data
-@app.route('/json/<brand>/<ram>/<storage>')
-def laptopBrandChosen(brand, ram, storage):
+@app.route('/json/<brand>/<ram>/<storage>/<price>/<screenSize>/<touchScreen>')
+def laptopBrandChosen(brand, ram, storage, price, screenSize, touchScreen):
     # Establishing Environment
     conn = psycopg2.connect(
         host="localhost",
@@ -33,16 +33,24 @@ def laptopBrandChosen(brand, ram, storage):
     cur = conn.cursor()
     intRam = int(ram)
     intStor = int(storage)
+    floatPrice = float(price)
+    floatScreenSize = float(screenSize)
+
+
+
     
     query = '''
             SELECT Laptop_Name, Price, CPU, RAM, 
             Screen_Size, Touchscreen, laptopindex, Storage FROM laptops 
             WHERE Brand = %s 
+            AND Price = %f
             AND RAM = %s 
-            AND Storage = %s;
+            AND Storage = %s
+            AND Screen_Size = %f
+            AND Touchscreen = %s;
             '''
     
-    cur.execute(query, (brand, intRam, intStor))
+    cur.execute(query, (brand, intRam, intStor, floatPrice, floatScreenSize, touchScreen))
 
     rows = cur.fetchall()
     
