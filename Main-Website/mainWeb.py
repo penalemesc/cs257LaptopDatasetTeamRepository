@@ -19,7 +19,7 @@ def displayLaptopChosen(brand,ram,storage,screenSize,touchScreen):
     return render_template("filterOutput.html")
 
 #Gathers the result for filtered options and return the JSON data
-@app.route('/json/<brand>/<ram>/<storage>/<price>/<screenSize>/<touchScreen>')
+@app.route('/json/<brand>/<ram>/<storage>/<screenSize>/<touchScreen>')
 def laptopBrandChosen(brand, ram, storage, screenSize, touchScreen):
     # Establishing Environment
     conn = psycopg2.connect(
