@@ -8,10 +8,13 @@ function onLoadFunct() {
     const brand = pathlist[2];
     const ram = pathlist[3];
     const storage = pathlist[4];
+    const price = pathlist[5];
+    const screenSize = pathlist[6];
+    const touchScreen = pathlist[7];
 
     console.log("onLoad: " + brand + " " + ram + " " + storage);
 
-    const queryURL = `/json/${brand}/${ram}/${storage}`;
+    const queryURL = `/json/${brand}/${ram}/${storage}/${price}/${screenSize}/${touchScreen}`;
     fetch(queryURL)
         .then(response => response.json())
         .then(data => generateDisplay(data))
@@ -83,6 +86,8 @@ function generateDisplay(data) {
                         <strong>Price of Laptop:</strong> <strong>$</strong>${laptopPrices[i]} <br>
                         <strong>Storage:</strong> ${laptopStorage[i]}<strong>GB</strong> <br>
                         <strong>Ram:</strong> ${laptop_RAM[i]}<strong>GB</strong> <br>
+                        <strong>Screen Size:</strong> ${laptop_screensize[i]}<strong>"</strong> <br>
+                        <strong>Touchscreen:</strong> ${laptop_touchscreen[i]} <br>
                           `;
 
         profileDetails.appendChild(title);
