@@ -14,13 +14,13 @@ def aboutUsPage():
     return render_template("aboutUs.html")
 
 #Displays the filtered options results
-@app.route('/display/<brand>/<ram>/<storage>')
-def displayLaptopChosen(brand,ram,storage):
+@app.route('/display/<brand>/<ram>/<storage>/<screenSize>/<touchScreen>')
+def displayLaptopChosen(brand,ram,storage,screenSize,touchScreen):
     return render_template("filterOutput.html")
 
 #Gathers the result for filtered options and return the JSON data
 @app.route('/json/<brand>/<ram>/<storage>/<price>/<screenSize>/<touchScreen>')
-def laptopBrandChosen(brand, ram, storage, price, screenSize, touchScreen):
+def laptopBrandChosen(brand, ram, storage, screenSize, touchScreen):
     # Establishing Environment
     conn = psycopg2.connect(
         host="localhost",
@@ -33,7 +33,6 @@ def laptopBrandChosen(brand, ram, storage, price, screenSize, touchScreen):
     cur = conn.cursor()
     intRam = int(ram)
     intStor = int(storage)
-    floatPrice = float(price)
     floatScreenSize = float(screenSize)
 
 
@@ -43,14 +42,13 @@ def laptopBrandChosen(brand, ram, storage, price, screenSize, touchScreen):
             SELECT Laptop_Name, Price, CPU, RAM, 
             Screen_Size, Touchscreen, laptopindex, Storage FROM laptops 
             WHERE Brand = %s 
-            AND Price = %f
             AND RAM = %s 
             AND Storage = %s
             AND Screen_Size = %f
             AND Touchscreen = %s;
             '''
     
-    cur.execute(query, (brand, intRam, intStor, floatPrice, floatScreenSize, touchScreen))
+    cur.execute(query, (brand, intRam, intStor, floatScreenSize, touchScreen))
 
     rows = cur.fetchall()
     
