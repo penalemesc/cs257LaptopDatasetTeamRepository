@@ -51,6 +51,7 @@ def laptopBrandChosen(brand, ram, storage, screenSize, touchScreen):
             '''
     
     cur.execute(query, (brand, intRam, intStor, screenSizeLowerBound, screenSizeUpperBound, touchScreen))
+    print(brand, intRam, intStor, screenSizeLowerBound, screenSizeUpperBound, touchScreen)
 
     rows = cur.fetchall()
     
