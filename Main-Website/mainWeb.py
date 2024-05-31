@@ -35,9 +35,6 @@ def laptopBrandChosen(brand, ram, storage, screenSize, touchScreen):
     intStor = int(storage)
     screenSizeLowerBound = float(screenSize.split("_")[0])
     screenSizeUpperBound = float(screenSize.split("_")[1])
-
-
-
     
     query = '''
             SELECT Laptop_Name, Price, CPU, RAM, 
@@ -50,8 +47,24 @@ def laptopBrandChosen(brand, ram, storage, screenSize, touchScreen):
             AND Touchscreen = %s;
             '''
     
-    cur.execute(query, (brand, intRam, intStor, screenSizeLowerBound, screenSizeUpperBound, touchScreen))
-    print(brand, intRam, intStor, screenSizeLowerBound, screenSizeUpperBound, touchScreen)
+    query = '''
+            SELECT Laptop_Name, Price, CPU, RAM, 
+            Screen_Size, Touchscreen, laptopindex, Storage FROM laptops 
+            WHERE 
+            '''
+    
+    if brand != "null":
+        query += "Brand = " + brand
+    
+    if ram != "null":
+        query += "RAM = " + ram
+
+    if storage != "null":
+        query += "Storage = " + storage
+
+
+    # cur.execute(query, (brand, intRam, intStor, screenSizeLowerBound, screenSizeUpperBound, touchScreen))
+    print(query)
 
     rows = cur.fetchall()
     
