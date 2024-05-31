@@ -59,40 +59,42 @@ def laptopBrandChosen(brand, ram, storage, screenSize, touchScreen):
             '''
     
     counter = 0
+    listVars = []
 
     if brand != "null":
-        if counter != 0:
+        if len(listVars) != 0:
             query += " AND "
-        query += " Brand = " + brand
-        counter += 1
+        query += " Brand = %s "
+        listVars.append(brand)
     
     if ram != "null":
-        if counter != 0:
+        if len(listVars) != 0:
             query += " AND "
-        query += " RAM = " + ram
-        counter += 1
+        query += " RAM = %s"
+        listVars.append(ram)
 
     if storage != "null":
-        if counter != 0:
+        if len(listVars) != 0:
             query += " AND "
-        query += " Storage = " + storage
-        counter += 1
+        query += " Storage = %s"
+        listVars.append(storage)
 
     if screenSize != "null":
-        if counter != 0:
+        if len(listVars) != 0:
             query += " AND "
-        query += " Screen_Size >= " + screenSizeLowerBound + " AND Screen_Size < " + screenSizeUpperBound
-        counter += 1
+        query += " Screen_Size >= %s" + " AND Screen_Size < %s"
+        listVars.append(screenSizeLowerBound)
+        listVars.append(screenSizeUpperBound)
 
     if touchScreen != "null":
-        if counter != 0:
+        if len(listVars) != 0:
             query += " AND "
-        query += " Touchscreen = " + touchScreen
-        counter += 1
+        query += " Touchscreen = %s"
+        listVars.append(touchScreen)
 
 
     # cur.execute(query, (brand, intRam, intStor, screenSizeLowerBound, screenSizeUpperBound, touchScreen))
-    print(query)
+    print(query, listVars)
 
     #rows = cur.fetchall()
 
