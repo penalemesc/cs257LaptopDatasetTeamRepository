@@ -27,9 +27,7 @@ function submitCompiledLink() {
     + "/" + screenSize 
     + "/" + touchScreen;
 
-console.log(brand)
-
-    // Redirect to the compiled link
-    //window.location.href = compiledLink;
+    //Redirect to the compiled link
+    window.location.href = compiledLink;
 }
 
