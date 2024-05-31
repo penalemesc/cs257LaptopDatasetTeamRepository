@@ -58,16 +58,37 @@ def laptopBrandChosen(brand, ram, storage, screenSize, touchScreen):
             WHERE 
             '''
     
+    counter = 0
+
     if brand != "null":
+        if counter != 0:
+            query += " AND "
         query += " Brand = " + brand
+        counter += 1
     
     if ram != "null":
-        query += " AND "
+        if counter != 0:
+            query += " AND "
         query += " RAM = " + ram
+        counter += 1
 
     if storage != "null":
-        query += " AND "
+        if counter != 0:
+            query += " AND "
         query += " Storage = " + storage
+        counter += 1
+
+    if screenSize != "null":
+        if counter != 0:
+            query += " AND "
+        query += " Screen_Size >= " + screenSizeLowerBound + " AND Screen_Size < " + screenSizeUpperBound
+        counter += 1
+
+    if touchScreen != "null":
+        if counter != 0:
+            query += " AND "
+        query += " Touchscreen = " + touchScreen
+        counter += 1
 
 
     # cur.execute(query, (brand, intRam, intStor, screenSizeLowerBound, screenSizeUpperBound, touchScreen))
