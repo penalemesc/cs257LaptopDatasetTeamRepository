@@ -95,10 +95,17 @@
             </div>
 
             <div style="text-align: left;">
-                <label for="price">What Price?</label>
-                <input class="typeInput" placeholder="Minimum Price">
-                <a>-</a>
-                <input class="typeInput" placeholder="Max Price">
+                <label for="screenSize">Price?</label>
+                <select id = "screenSize">
+                    <option selected disabled value = "null">Choose Price</option>
+                    <option value="0_500">$0 - $500</option>
+                    <option value="500_1000">$500 - $1000</option>
+                    <option value="1000_1500">$1000 - $1500</option>
+                    <option value="1500_2000">$1500 - $2000</option>
+                    <option value="2000_2500">$2000 - $2500</option>
+                    <option value="2500_3000">$2500 - $3000</option>
+                    <option value="3000_10000">>$3000</option>
+                </select>
             </div>
         </form>
         <div class="button-container">

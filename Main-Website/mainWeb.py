@@ -14,13 +14,13 @@ def aboutUsPage():
     return render_template("aboutUs.html")
 
 #Displays the filtered options results
-@app.route('/display/<brand>/<ram>/<storage>/<screenSize>/<touchScreen>/<minPrice>/<maxPrice>')
-def displayLaptopChosen(brand, ram, storage, screenSize, touchScreen, minPrice, maxPrice):
+@app.route('/display/<brand>/<ram>/<storage>/<screenSize>/<touchScreen>/<priceRange>')
+def displayLaptopChosen(brand, ram, storage, screenSize, touchScreen,priceRange):
     return render_template("filterOutput.html")
 
 #Gathers the result for filtered options and return the JSON data
-@app.route('/json/<brand>/<ram>/<storage>/<screenSize>/<touchScreen>/<minPrice>/<maxPrice>')
-def laptopBrandChosen(brand, ram, storage, screenSize, touchScreen, minPrice, maxPrice):
+@app.route('/json/<brand>/<ram>/<storage>/<screenSize>/<touchScreen>/<priceRange>')
+def laptopBrandChosen(brand, ram, storage, screenSize, touchScreen,priceRange):
     # Establishing Environment
     conn = psycopg2.connect(
         host="localhost",
@@ -41,11 +41,10 @@ def laptopBrandChosen(brand, ram, storage, screenSize, touchScreen, minPrice, ma
         screenSizeLowerBound = float(screenSize.split("_")[0])
         screenSizeUpperBound = float(screenSize.split("_")[1])
     
-    if minPrice != "null":
-        minPriceRange = float(minPrice)
-    
-    if maxPrice != "null":
-        maxPriceRange = float(maxPrice)    
+    if priceRange != "null":
+        minPrice = float(priceRange.split("_")[0])
+        maxPrice = float(priceRange.split("_")[1])
+      
 
     query = '''
             SELECT Laptop_Name, Price, CPU, RAM, 
@@ -86,17 +85,12 @@ def laptopBrandChosen(brand, ram, storage, screenSize, touchScreen, minPrice, ma
         query += " Touchscreen = %s"
         listVars.append(touchScreen)
     
-    if minPriceRange != "null":
+    if priceRange != "null":
         if len(listVars) != 0:
             query += " AND "
-        query += " minPrice <= %s"
-        listVars.append(minPriceRange)
-
-    if maxPriceRange != "null":
-        if len(listVars) != 0:
-            query += " AND "
-        query += " maxPrice >= %s"
-        listVars.append(maxPriceRange)
+        query += " Price >= %s" + " AND Price < %s"
+        listVars.append(minPrice)
+        listVars.append(maxPrice)
 
 
     cur.execute(query, listVars)

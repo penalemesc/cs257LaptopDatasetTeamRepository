@@ -10,12 +10,11 @@ function onLoadFunct() {
     const storage = pathlist[4];
     const screenSize = pathlist[5];
     const touchScreen = pathlist[6];
-    const minPrice = pathlist[7];
-    const maxPrice = pathlist[7]
+    const price = pathlist[7];
 
     console.log("onLoad: " + brand + " " + ram + " " + storage);
 
-    const queryURL = `/json/${brand}/${ram}/${storage}/${screenSize}/${touchScreen}/${minPrice}/${maxPrice}`;
+    const queryURL = `/json/${brand}/${ram}/${storage}/${screenSize}/${touchScreen}/${price}`;
     fetch(queryURL)
         .then(response => response.json())
         .then(data => generateDisplay(data))
