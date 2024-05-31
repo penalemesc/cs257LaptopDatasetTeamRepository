@@ -93,7 +93,7 @@ def laptopBrandChosen(brand, ram, storage, screenSize, touchScreen):
         listVars.append(touchScreen)
 
 
-    cur.execute(query, (listVars))
+    cur.execute(query, listVars)
     print(query, listVars)
 
     rows = cur.fetchall()
