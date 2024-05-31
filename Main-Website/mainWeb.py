@@ -33,8 +33,10 @@ def laptopBrandChosen(brand, ram, storage, screenSize, touchScreen):
     cur = conn.cursor()
     intRam = int(ram)
     intStor = int(storage)
-    screenSizeLowerBound = float(screenSize.split("_")[0])
-    screenSizeUpperBound = float(screenSize.split("_")[1])
+    
+    if screenSize != "null":
+        screenSizeLowerBound = float(screenSize.split("_")[0])
+        screenSizeUpperBound = float(screenSize.split("_")[1])
     
     query = '''
             SELECT Laptop_Name, Price, CPU, RAM, 
