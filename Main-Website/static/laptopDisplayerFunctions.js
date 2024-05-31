@@ -8,9 +8,8 @@ function onLoadFunct() {
     const brand = pathlist[2];
     const ram = pathlist[3];
     const storage = pathlist[4];
-    const price = pathlist[5];
-    const screenSize = pathlist[6];
-    const touchScreen = pathlist[7];
+    const screenSize = pathlist[5];
+    const touchScreen = pathlist[6];
 
     console.log("onLoad: " + brand + " " + ram + " " + storage);
 
