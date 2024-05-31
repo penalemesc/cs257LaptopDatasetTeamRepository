@@ -45,8 +45,8 @@ def laptopBrandChosen(brand, ram, storage, screenSize, touchScreen):
             WHERE Brand = %s 
             AND RAM = %s 
             AND Storage = %s
-            AND Screen_Size >= %f
-            AND Screen_Size < %f
+            AND Screen_Size >= %s
+            AND Screen_Size < %s
             AND Touchscreen = %s;
             '''
     
