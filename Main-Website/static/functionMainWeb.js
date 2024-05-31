@@ -28,6 +28,7 @@ function submitCompiledLink() {
     + "/" + price ;
 
     //Redirect to the compiled link
-    window.location.href = compiledLink;
+    //window.location.href = compiledLink;
+    console.log(compiledLink);
 }
 
