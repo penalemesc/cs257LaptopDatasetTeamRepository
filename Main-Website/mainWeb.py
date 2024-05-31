@@ -33,7 +33,8 @@ def laptopBrandChosen(brand, ram, storage, screenSize, touchScreen):
     cur = conn.cursor()
     intRam = int(ram)
     intStor = int(storage)
-    floatScreenSize = float(screenSize)
+    screenSizeLowerBound = float(screenSize.split("_")[0])
+    screenSizeUpperBound = float(screenSize.split("_")[1])
 
 
 
@@ -44,11 +45,12 @@ def laptopBrandChosen(brand, ram, storage, screenSize, touchScreen):
             WHERE Brand = %s 
             AND RAM = %s 
             AND Storage = %s
-            AND Screen_Size = %f
+            AND Screen_Size >= %f
+            AND Screen_Size < %f
             AND Touchscreen = %s;
             '''
     
-    cur.execute(query, (brand, intRam, intStor, floatScreenSize, touchScreen))
+    cur.execute(query, (brand, intRam, intStor, screenSizeLowerBound, screenSizeUpperBound, touchScreen))
 
     rows = cur.fetchall()
     
