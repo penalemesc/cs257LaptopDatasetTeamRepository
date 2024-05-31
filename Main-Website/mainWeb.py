@@ -31,9 +31,12 @@ def laptopBrandChosen(brand, ram, storage, screenSize, touchScreen):
     )
     
     cur = conn.cursor()
-    intRam = int(ram)
-    intStor = int(storage)
+    if ram != "null":
+        intRam = int(ram)
     
+    if storage != "null":
+        intStor = int(storage)
+
     if screenSize != "null":
         screenSizeLowerBound = float(screenSize.split("_")[0])
         screenSizeUpperBound = float(screenSize.split("_")[1])
@@ -56,19 +59,23 @@ def laptopBrandChosen(brand, ram, storage, screenSize, touchScreen):
             '''
     
     if brand != "null":
-        query += "Brand = " + brand
+        query += " Brand = " + brand
     
     if ram != "null":
-        query += "RAM = " + ram
+        query += " AND "
+        query += " RAM = " + ram
 
     if storage != "null":
-        query += "Storage = " + storage
+        query += " AND "
+        query += " Storage = " + storage
 
 
     # cur.execute(query, (brand, intRam, intStor, screenSizeLowerBound, screenSizeUpperBound, touchScreen))
     print(query)
 
-    rows = cur.fetchall()
+    #rows = cur.fetchall()
+
+    rows = None
     
     #this checks so that if there are no any laptops that match the specification, the site doesnt crash
     if not rows:
