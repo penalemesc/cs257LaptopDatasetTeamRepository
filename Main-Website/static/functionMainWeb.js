@@ -17,7 +17,7 @@ function submitCompiledLink() {
     var storage = document.getElementById("storage").value;
     var screenSize = document.getElementById("screenSize").value;
     var touchScreen = document.getElementById("touchScreen").value;
-    var price = document.getElementById("price").value;
+    var price = document.getElementById("priceRange").value;
     // Construct the URL based on selected values
     var compiledLink = "/display/" 
     + brand 
@@ -25,10 +25,10 @@ function submitCompiledLink() {
     + "/" + storage 
     + "/" + screenSize 
     + "/" + touchScreen
-    + "/" + price ;
+    + "/" + price;
 
     //Redirect to the compiled link
-    //window.location.href = compiledLink;
+    window.location.href = compiledLink;
     console.log(compiledLink);
 }
 

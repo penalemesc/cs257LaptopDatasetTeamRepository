@@ -88,7 +88,7 @@ def laptopBrandChosen(brand, ram, storage, screenSize, touchScreen,priceRange):
     if priceRange != "null":
         if len(listVars) != 0:
             query += " AND "
-        query += " Price >= %s" + " AND Price < %s"
+        query += " Price >= %s" + " AND Price <= %s"
         listVars.append(minPrice)
         listVars.append(maxPrice)
 
