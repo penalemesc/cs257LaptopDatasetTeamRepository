@@ -14,13 +14,13 @@ def aboutUsPage():
     return render_template("aboutUs.html")
 
 #Displays the filtered options results
-@app.route('/display/<brand>/<ram>/<storage>/<screenSize>/<touchScreen>')
-def displayLaptopChosen(brand,ram,storage,screenSize,touchScreen):
+@app.route('/display/<brand>/<ram>/<storage>/<screenSize>/<touchScreen>/<minPrice>/<maxPrice>')
+def displayLaptopChosen(brand, ram, storage, screenSize, touchScreen, minPrice, maxPrice):
     return render_template("filterOutput.html")
 
 #Gathers the result for filtered options and return the JSON data
-@app.route('/json/<brand>/<ram>/<storage>/<screenSize>/<touchScreen>')
-def laptopBrandChosen(brand, ram, storage, screenSize, touchScreen):
+@app.route('/json/<brand>/<ram>/<storage>/<screenSize>/<touchScreen>/<minPrice>/<maxPrice>')
+def laptopBrandChosen(brand, ram, storage, screenSize, touchScreen, minPrice, maxPrice):
     # Establishing Environment
     conn = psycopg2.connect(
         host="localhost",
@@ -41,13 +41,18 @@ def laptopBrandChosen(brand, ram, storage, screenSize, touchScreen):
         screenSizeLowerBound = float(screenSize.split("_")[0])
         screenSizeUpperBound = float(screenSize.split("_")[1])
     
+    if minPrice != "null":
+        minPriceRange = float(minPrice)
+    
+    if maxPrice != "null":
+        maxPriceRange = float(maxPrice)    
+
     query = '''
             SELECT Laptop_Name, Price, CPU, RAM, 
             Screen_Size, Touchscreen, laptopindex, Storage FROM laptops 
             WHERE 
             '''
     
-    counter = 0
     listVars = []
 
     if brand != "null":
@@ -80,6 +85,18 @@ def laptopBrandChosen(brand, ram, storage, screenSize, touchScreen):
             query += " AND "
         query += " Touchscreen = %s"
         listVars.append(touchScreen)
+    
+    if minPriceRange != "null":
+        if len(listVars) != 0:
+            query += " AND "
+        query += " minPrice <= %s"
+        listVars.append(minPriceRange)
+
+    if maxPriceRange != "null":
+        if len(listVars) != 0:
+            query += " AND "
+        query += " maxPrice >= %s"
+        listVars.append(maxPriceRange)
 
 
     cur.execute(query, listVars)
