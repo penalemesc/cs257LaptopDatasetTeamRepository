@@ -14,7 +14,7 @@ function onLoadFunct() {
 
     console.log("onLoad: " + brand + " " + ram + " " + storage);
 
-    const queryURL = `/json/${brand}/${ram}/${storage}/${price}/${screenSize}/${touchScreen}`;
+    const queryURL = `/json/${brand}/${ram}/${storage}/${screenSize}/${touchScreen}`;
     fetch(queryURL)
         .then(response => response.json())
         .then(data => generateDisplay(data))
